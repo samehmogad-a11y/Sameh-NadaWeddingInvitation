@@ -30,11 +30,19 @@
     --text: #2b2b2b;
 }
 
+
+img, svg, video {
+    max-width: 100%;
+}
+
 html,body{
     width:100%;
     min-height:100%;
     background: #f5f3ef;
+    overflow-x: hidden;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 body {
     background: #f5f3ef;
@@ -45,45 +53,53 @@ body {
 body::before {
     content: "";
     position: fixed;
-    width: 900px;
-    height: 900px;
+
+    width: 80vmax;
+    height: 80vmax;
 
     background: radial-gradient(
         circle,
         rgba(131,93,47,0.75) 0%,
-        rgba(131,93,47,0.25) 35%,
-        transparent 70%
+        rgba(131,93,47,0.25) 40%,
+        transparent 75%
     );
 
-    top: -200px;
-    left: -200px;
+    top: 0;
+    left: 0;
 
-    filter: blur(90px);
-    opacity: 1;
+    transform: translate(-40%, -40%);
+
+    filter: blur(110px);
+    opacity: 0.9;
+
     z-index: -1;
-    transform: scale(1.2);
+    pointer-events: none;
 }
 
 body::after {
     content: "";
     position: fixed;
-    width: 1000px;
-    height: 1000px;
+
+    width: 90vmax;
+    height: 90vmax;
 
     background: radial-gradient(
         circle,
-        rgba(131,93,47,0.55) 0%,
-        rgba(131,93,47,0.2) 40%,
-        transparent 75%
+        rgba(131, 93, 47, 0.55) 0%,
+        rgba(131, 93, 47, 0.25) 40%,
+        transparent 70%
     );
 
-    bottom: -250px;
-    right: -250px;
+    top: 50%;
+    left: 50%;
 
-    filter: blur(110px);
+    transform: translate(-50%, -50%) scale(1.4);
+
+    filter: blur(120px);
     opacity: 0.9;
+
     z-index: -1;
-    transform: scale(1.3);
+    pointer-events: none;
 }
 section {
     background: transparent !important;
@@ -563,7 +579,7 @@ section {
 
 .time-divider .line{
 
-    width:60px;
+    width:40px;
 
     height:1px;
 
@@ -1209,7 +1225,7 @@ section {
    
 
     <h2 class="venue-title" style="font-family:  Jim Nightshade ;color:#835d2fd6; font-weight: bold; padding: 10px;">VOLARE</h2>
-    <p class=" venue-name" style="font-family: Arizonia;color:#835d2fd6; font-size: 100px;padding: 10px;"> The Venue</p>
+    <p class=" venue-name" style="font-family: Arizonia;color:#835d2fd6; font-size: 70px;padding: 10px;"> The Venue</p>
     <p class="venue-address" style="color:#835d2fd6">
         Cairo, Egypt
     </p>
